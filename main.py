@@ -66,13 +66,20 @@ TWILIO_CONFIG = TwilioConfig(
   auth_token=os.environ.get("TWILIO_AUTH_TOKEN"),
 )
 
+# Get the instructions for the assistant
+def get_assistant_instructions():
+
+  # Open the file and read its contents
+  with open('instructions.txt', 'r') as file:
+    return file.read()
+
 # Now, we'll configure our agent and its objective.
 # We'll use ChatGPT here, but you can import other models like
 # GPT4AllAgent and ChatAnthropicAgent.
 # Don't forget to set OPENAI_API_KEY!
 AGENT_CONFIG = ChatGPTAgentConfig(
   initial_message=BaseMessage(text="Hello, who am I talking to?"),
-  prompt_preamble="Have a pleasant conversation about life",
+  prompt_preamble=get_assistant_instructions(),
   generate_responses=True,
 )
 

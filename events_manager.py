@@ -27,10 +27,8 @@ class EventsManager(events_manager.EventsManager):
             # Prepare the data to be sent
             data = {
                 "conversation_id": transcript_complete_event.conversation_id,
-                "user_id": 1,  # Assuming a demo user id for simplicity
-                "transcript": transcript_complete_event.transcript.to_string(),
-                "to_phone_number": transcript_complete_event.to_phone_number,
-                "from_phone_number": transcript_complete_event.from_phone_number
+                "user_id": 1,  # demo user id
+                "transcript": transcript_complete_event.transcript.to_string()
             }
 
             # URL of the webhook endpoint you want to send the data to
