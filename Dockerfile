@@ -19,6 +19,7 @@ COPY speller_agent.py /code/speller_agent.py
 COPY memory_config.py /code/memory_config.py
 COPY events_manager.py /code/events_manager.py
 COPY config.py /code/config.py
+COPY instructions.txt /code/instructions.txt
 RUN mkdir -p /code/call_transcripts
 RUN mkdir -p /code/db
 
